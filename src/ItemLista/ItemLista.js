@@ -1,12 +1,15 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native-web";
 
-function ItemLista(props){
-    return(
+//Cards que mostrarão os times
+//Importante definir props, que recebe as variaveis
+function ItemLista(props) {
+    return (
+        //Corpo do card View>IMAGEM>VIEW>TEXTOS
         <View style={styles.card}>
-            <Image 
-            style={styles.img}
-            source={{uri: props.img}}
+            <Image
+                style={styles.img}
+                source={{ uri: props.img }}
             />
 
             <View>
@@ -18,8 +21,9 @@ function ItemLista(props){
     )
 }
 
+//Estilização do card
 const styles = StyleSheet.create({
-    card:{
+    card: {
         flexDirection: 'row',
         borderWidth: 1,
         borderColor: 'black',
@@ -30,19 +34,21 @@ const styles = StyleSheet.create({
 
     },
 
-    img:{
+    img: {
         width: 100,
         height: 100
 
     },
 
-    nome:{
-        fontSize:20
+    nome: {
+        fontSize: 20,
+        fontWeight: 'bold'
 
     },
 
-    descricao:{
-        fontSize:16
+    descricao: {
+        fontSize: 16,
+        fontFamily: 'serif',
     }
 })
 

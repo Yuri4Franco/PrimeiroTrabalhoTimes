@@ -1,11 +1,22 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/Home/Home';
+import TelaTime from './src/TelasTime/TelaTime';
 
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Home/>
-    </View>
+
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='Home'>
+
+        <Stack.Screen component={Home} name="Home"/>
+        <Stack.Screen component={TelaTime} name="TelaTime"/>
+    
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
